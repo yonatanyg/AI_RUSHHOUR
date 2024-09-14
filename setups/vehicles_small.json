@@ -1,0 +1,21 @@
+[
+  {
+    "symbol": "X",
+    "position": [2, 0],
+    "length": 1,
+    "orientation": "both"
+
+  },
+  {
+    "symbol": "A",
+    "length": 2,
+    "orientation": "vertical",
+    "position": [1, 2]
+  },
+  {
+    "symbol": "B",
+    "length": 2,
+    "orientation": "horizontal",
+    "position": [1, 0]
+  }
+]

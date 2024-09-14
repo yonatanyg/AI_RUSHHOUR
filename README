@@ -1,0 +1,35 @@
+Instructions for running the code:
+
+There are 3 modes available, playing mode, search model solve mode, and graph planning solve mode.
+
+run the program from the command line using the following syntax:
+
+python rush_hour_solver.py <model> <board_size> <vehicles_file> <targets> [OPTIONS]
+
+where model belongs to {PLAY,PLAN,SEARCH}
+board_size - int
+vehicles_file - path to json datafile
+targets - list of target coordinates, format: x1,y1 x2,y2 x3,y3 ...
+
+[OPTIONS] depend on the mode you want to run,
+for playing: no paramters
+for search model:
+--algo <algo>, where <algo> belongs to {astar,bfs,dfs}
+--heuristic <h> where <h> belongs to {null,target,distance}
+for plan model:
+--board_name <some_string> (doesnt really matter what string)
+----plan_heuristic <h> where <h> belongs to {max,zero,sum}
+
+examples:
+if want to play our medium sized board:
+
+python main.py PLAY 5 setups/medium.json 3,1 0,3 2,3
+
+if i want to run the Search model on it, with astar and target heuristic
+
+python main.py SEARCH 5 setups/medium.json 3,1 0,3 2,3 --algo astar --heuristic target
+
+if i want to run the Planning model on it, with sum heuristic:
+
+python main.py PLAN 5 setups/medium.json 0,3 2,3 3,1 --board_name medium_board --plan_heuristic sum
+
